@@ -1,17 +1,17 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-class Header extends React.Component {
+class Menu extends React.Component {
     constructor(props) {
         super(props);
     }
 
     render() {
         return (
-            <header>
-                <h1>index.js top menu</h1>  
+            <nav>
+                <h1>index.js side bar</h1>  
                            
-            </header>
+            </nav>
         );
     }
 }
@@ -19,6 +19,6 @@ class Header extends React.Component {
 
 
 render(
-    <Header data={"Header"} />,
+    <Menu data={"Header"} />,
     document.getElementById('root')
 )
