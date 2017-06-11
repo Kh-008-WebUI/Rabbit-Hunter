@@ -47,6 +47,10 @@
 .App-content1, .App-content2, .App-content3 {
   border: 5px solid black;
   border-radius: 150px;
+  text-align: center;
+  background-color: darkgrey;
+  color: lightskyblue;
+  text-align: justify;
   width: 200px;
   height: 200px;
   margin: 40px;

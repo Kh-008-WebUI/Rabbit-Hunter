@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-//import picture from './21--home-automation-dashboard6.gif';
 import './App.css';
 
 class App extends Component {
   render() {
+    let changeBanner = undefined;
     return (
       <div className="App">
         <Header />
@@ -16,11 +16,22 @@ class App extends Component {
 }
 
 class Header extends Component {
+    constructor(){
+      super();
+      this.state = {text: "Welcome to Smart House"};
+      this.changeBanner = this.changeBanner.bind(this);
+    }
+
+    changeBanner () {
+       this.setState(() => ({text: "Yes"}));
+    }
+
     render() {
       return (
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to Smart House</h2>
+          <h2>{this.state.text}</h2>
+          <button onClick={this.changeBanner}></button>
         </header>
       );
     };
@@ -32,8 +43,8 @@ class SideBar extends Component {
         <nav>
           <ul className="App-nav">
             <li><Button name="Doors"/></li>
-            <li><Button name="Windows"/></li>
-            <li><Button name="Kitchen"/></li>
+            <li><Button name="Water"/></li>
+            <li><Button name="Electricity"/></li>
             <li><Button name="Flowers"/></li>
             <li><Button name="Heating"/></li>
           </ul>
@@ -43,9 +54,10 @@ class SideBar extends Component {
 }
 
 class Button extends Component {
+    
     render(){
       return (
-        <button className="App-button">{this.props.name}</button>
+        <button className="App-button" onClick="">{this.props.name}</button>
       );
     } 
 }
@@ -71,6 +83,7 @@ class Temperature extends Component {
       );
     };
 }
+
 
 export default App;
 
