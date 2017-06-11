@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: lightgrey;
 }
 
 .App-logo {
@@ -24,7 +25,7 @@
   list-style-type: none;
 }
 .App-content {
-  border: 1px solid black;
+  border: 2px solid black;
   width: 80%;
   height: 635px;
   margin: auto;
@@ -38,7 +39,27 @@
   height: 120px;
   margin: 5px;
   font-size: large;
+  color: white;
+  border-radius: 15px;
+  background-color: black;
 }
+
+.App-content1, .App-content2, .App-content3 {
+  border: 5px solid black;
+  border-radius: 150px;
+  width: 200px;
+  height: 200px;
+  margin: 40px;
+  margin-left: 40px;
+  display: inline-block;
+}
+
+.App-picture {
+  margin: 30px;
+  width: 40%;
+  height: 300px;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+//import picture from './21--home-automation-dashboard6.gif';
 import './App.css';
 
 class App extends Component {
@@ -30,11 +31,11 @@ class SideBar extends Component {
       return (
         <nav>
           <ul className="App-nav">
-            <li><Button /></li>
-            <li><Button /></li>
-            <li><Button /></li>
-            <li><Button /></li>
-            <li><Button /></li>
+            <li><Button name="Doors"/></li>
+            <li><Button name="Windows"/></li>
+            <li><Button name="Kitchen"/></li>
+            <li><Button name="Flowers"/></li>
+            <li><Button name="Heating"/></li>
           </ul>
         </nav>
       );
@@ -44,7 +45,7 @@ class SideBar extends Component {
 class Button extends Component {
     render(){
       return (
-        <button className="App-button">Device</button>
+        <button className="App-button">{this.props.name}</button>
       );
     } 
 }
@@ -53,8 +54,20 @@ class Content extends Component {
     render() {
       return (
         <div className="App-content">
-          Content
+          <Temperature />
+          <div className="App-content2"></div>
+          <div className="App-content3"></div>
+          <img src='pogoda.png' className="App-picture" alt="weather"/>
+          <img src='home.gif' className="App-picture" alt="plan"/>
         </div>
+      );
+    };
+}
+
+class Temperature extends Component {
+    render() {
+      return (
+        <div className="App-content1"></div>
       );
     };
 }
