@@ -1,0 +1,31 @@
+body {
+    background: green;
+}
+img{
+	width:150px;
+}
+.Wrap{
+	text-align:center;
+}
+.Hunter{
+	display:inline-block;
+	margin:5px;
+	height: 335px;
+	width: 270px;
+	border: 1px solid black;
+}
+.HunterOne{
+	float:left;
+}
+.hunterAdd{
+	width:50%;
+}
+.Rabbit{
+	height:auto;
+	margin: 0 auto;
+}
+button{
+    width: 100px;
+    height: 50px;
+    display: block;
+}
