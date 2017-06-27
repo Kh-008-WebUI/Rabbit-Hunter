@@ -1,0 +1,176 @@
+body {
+    margin: 0;
+    font-family: 'Georgia';
+}
+
+.main-container {
+    display: flex;
+    flex: 2 1;
+    justify-content: space-between;
+}
+
+.sidebar {
+    width: 300px;
+}
+
+.sidebar__links a {
+    display: block;
+    text-decoration: none;
+    position: relative;
+    right: 60px;
+    color: black;
+}
+
+.sidebar__links a:hover {
+    color: darkred;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.sidebar__links a:active {
+    color: green;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.field {
+    position: relative;
+    background-image: url("https://s-media-cache-ak0.pinimg.com/736x/6f/86/6a/6f866afaa95cdb754fe00b42dfa21648.jpg");
+    background-repeat: no-repeat;
+    width: 900px;
+    height: 580px;
+    .hare {
+        background-image: url("https://image.freepik.com/free-vector/coloured-rabbit-design_1114-13.jpg");
+        background-size: 50px 50px;
+        border-radius: 50%;
+        box-shadow: 0 0 15px orange inset; 
+        background-repeat: no-repeat;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+    }
+
+    .hunter {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border: 2px solid red;
+        border-radius: 50%;
+        background: white;
+        box-shadow: 0 0 15px darkred; 
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow: 0 0 15px darkred;
+        }
+        p {
+            color: black;
+            text-align: center;
+            transform: rotate(45deg);
+            font-size: 16px;
+            line-height: 32px;
+            margin: 0;    
+        }
+    }
+}
+
+.hunter {
+    display: flex;
+}
+
+.bunny {
+    background-color: lightgreen;
+    border: 3px dashed black;
+    border-radius: 7px;
+    font-weight: bold;
+    box-shadow: 0 0 20px orange; 
+    margin: 10px 10px;
+}
+
+.hare-steps {
+    background-color: lightgreen;
+    border: 3px dashed black;
+    border-radius: 7px;
+    font-weight: bold;
+    box-shadow: 0 0 20px orange; 
+    margin: 10px 0;
+}
+
+input[type=number] {
+    width: 170px;
+}
+
+.delHunters {
+    background-color: red;
+    border: 3px dashed black;
+    border-radius: 7px;
+    font-weight: bold;
+    width: 60px;
+    height: 25px;
+}
+
+.set_hare_location {
+   width: 200px; 
+   height: 100px;
+   border: 3px solid darkred;
+}
+
+.form-inputs {
+    display: block;
+    margin: 0 auto;
+}
+
+.hunter__create {
+    width: 230px; 
+    height: 100px;
+    border: 3px solid darkred;
+}
+
+.hunters_form {
+    display: block;
+    padding-left: 5px;
+}
+
+.not_found {
+    width: 170px;
+    height: 15px;
+    text-align: center;
+}
+
+.no_hunters {
+    background-color: red;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+}
+
+input {
+    margin-top: 5px;
+}
+
+.add-hunter {
+    background-color: red;
+    border: 3px dashed black;
+    box-shadow: 0 0 15px orange; 
+    border-radius: 7px;
+    font-weight: bold;
+    width: 70px;
+    height: 40px;
+    margin-top: 5px;
+}
+
+ul {
+    list-style-type: none;
+li {
+    font-size: 20px;
+    padding: 5px;
+    }
+}
+
