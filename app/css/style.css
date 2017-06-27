@@ -162,3 +162,19 @@ input {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.killed-hare {
+    background-image: url("../img/killed_hare2.png");
+    width: 18px;
+    height: 18px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 3px;
+}
+
+.killed-hare-block {
+    margin: 0px 8px 0 8px;
+    display: flex;
+    flex-wrap: wrap;
+}

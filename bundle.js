@@ -12816,9 +12816,33 @@ exports.default = Hunter;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
-var listHunterLogoPath = ['./app/img/hunt2.jpg', './app/img/hunt3.jpg', './app/img/hunt4.jpg', './app/img/hunt5.jpg', './app/img/hunt6.jpg', './app/img/hunt7.jpg', './app/img/hunt8.jpg', './app/img/hunt9.jpg', './app/img/hunt10.jpg'];
+var listHunterLogoPath = [{
+    path: './app/img/hunt2.jpg',
+    killed: 4
+}, {
+    path: './app/img/hunt3.jpg',
+    killed: 4
+}, {
+    path: './app/img/hunt4.jpg',
+    killed: 4
+}, {
+    path: './app/img/hunt5.jpg',
+    killed: 4
+}, {
+    path: './app/img/hunt6.jpg',
+    killed: 4
+}, {
+    path: './app/img/hunt7.jpg',
+    killed: 4
+}, {
+    path: './app/img/hunt8.jpg',
+    killed: 4
+}, {
+    path: './app/img/hunt9.jpg',
+    killed: 4
+}];
 
 exports.listHunterLogoPath = listHunterLogoPath;
 
@@ -12959,8 +12983,7 @@ var RealHunter = function (_React$Component) {
     _createClass(RealHunter, [{
         key: "render",
         value: function render() {
-            var path = { backgroundImage: "url(" + this.props.path + ")" };
-
+            var path = { backgroundImage: "url(" + this.props.path.path + ")" };
             return _react2.default.createElement(
                 "figure",
                 { className: "title-name" },
@@ -12970,6 +12993,13 @@ var RealHunter = function (_React$Component) {
                     null,
                     "Name: ",
                     this.props.name
+                ),
+                _react2.default.createElement(
+                    "div",
+                    { className: "killed-hare-block" },
+                    [0, 0, 0].map(function (item, key) {
+                        return _react2.default.createElement("div", { className: "killed-hare", key: key });
+                    })
                 )
             );
         }

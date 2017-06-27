@@ -1,14 +1,37 @@
- let listHunterLogoPath = [
-     './app/img/hunt2.jpg',
-     './app/img/hunt3.jpg',
-     './app/img/hunt4.jpg',
-     './app/img/hunt5.jpg',
-     './app/img/hunt6.jpg',
-     './app/img/hunt7.jpg',
-     './app/img/hunt8.jpg',
-     './app/img/hunt9.jpg',
-     './app/img/hunt10.jpg'
+ let listHunterLogoPath = [{
+         path: './app/img/hunt2.jpg',
+         killed: 4
+     },
+     {
+         path: './app/img/hunt3.jpg',
+         killed: 4
+     },
+     {
+         path: './app/img/hunt4.jpg',
+         killed: 4
+     },
+     {
+         path: './app/img/hunt5.jpg',
+         killed: 4
+     },
+     {
+         path: './app/img/hunt6.jpg',
+         killed: 4
+     },
+     {
+         path: './app/img/hunt7.jpg',
+         killed: 4
+     },
+     {
+         path: './app/img/hunt8.jpg',
+         killed: 4
+     },
+     {
+         path: './app/img/hunt9.jpg',
+         killed: 4
+     }
  ];
 
- export {listHunterLogoPath};
-
+ export {
+     listHunterLogoPath
+ };
