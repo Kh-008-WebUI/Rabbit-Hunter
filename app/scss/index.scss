@@ -1,24 +1,65 @@
 body {
     background: green;
 }
+.container{
+	background:white;
+	width:100%;	
+	min-height:100vh;
+}
+.navigation{
+	width: 15rem;
+	height:100vh;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:999999;
+	border-right: 1px solid black;
+	background: rgba(52, 0, 78,1);
+}
+.nav{
+	height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 img{
 	width:150px;
+	height:165px;
 }
-.Wrap{
+.Wrap,
+.hunterAdd{
 	text-align:center;
+	margin-left:15rem;
+}
+.Hunters{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content: center;
 }
 .Hunter{
+    text-align: right;
+	position:relative;
 	display:inline-block;
 	margin:5px;
-	height: 335px;
-	width: 270px;
-	border: 1px solid black;
+    height: 305px;
+    width: 225px;
 }
-.HunterOne{
-	float:left;
+.Hunter_whisper{
+	padding:5px;
+	padding-top:15px;
+	position:absolute;
+	top:0;
+	left:0;
+	height: 65px;
+	background:url(../data/say.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
-.hunterAdd{
+.Hunter_info{
+ 	display:inline-block;
 	width:50%;
+	text-align:left;
 }
 .Rabbit{
 	height:auto;
@@ -28,4 +69,53 @@ button{
     width: 100px;
     height: 50px;
     display: block;
+}
+.btn-margin{
+	margin-top: -55px;
+}
+.name-red{
+	border:1px solid red;
+}
+.name-green{
+	border:1px solid green;
+}
+.main-form{
+	background: #fdff9c;
+    width: 30%;
+    min-width: 200px;
+    margin: 0 auto;	
+    border-radius:15px;
+}
+.margin{
+	margin:15px 0;
+}
+
+@media only screen and (max-width: 660px) {
+	.navigation{
+		width: 100%;
+		height:50px;
+		position:fixed;
+		top:0;
+		left:0;
+		z-index:999999;
+		border-right: 1px solid black;
+		background: rgba(52, 0, 78,1);
+	}
+	.Rabbit{
+		height:auto;
+		margin: 15px auto;
+	}
+	.Wrap,
+	.hunterAdd{
+		text-align:center;
+		margin-left:0;
+		margin-top:60px;
+	}
+	.nav{
+		height: 100%;
+	    display: flex;
+	    flex-direction: row;
+	    justify-content: center;
+	    align-items: center;
+	}
 }

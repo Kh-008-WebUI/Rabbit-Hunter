@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Rabbit from './Rabbit';
-import Hunter from './Hunter';
+import {Hunters} from './Hunters';
 
 export default class Wrap extends Component {
 	constructor(props){
@@ -10,15 +10,12 @@ export default class Wrap extends Component {
 	render() {
 		return (
 			<div className='Wrap'>
-				<Rabbit move={this.props.move}/>
-				{this.props.hunter.map( (item,i) => {
-		            return <Hunter key={i}
-		            			   name={item.name} 
-		               			   gender={item.gender} 
-		               			   x={this.props.x} 
-		               			   y={this.props.y}/>
-		               })
-	            }
+				<Rabbit move={this.props.move} isDead={this.props.isDead}/>
+				<Hunters hunter={this.props.hunter} 
+						 x={this.props.x} 
+						 y={this.props.y}
+						 fire={this.props.fire}
+						 isDead={this.props.isDead}/>
 			</div>
 		);
 	}

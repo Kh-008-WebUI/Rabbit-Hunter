@@ -85,6 +85,7 @@ module.exports = {
         compress: true,
         hot: true,
         stats: "errors-only",
+        historyApiFallback: true,
         open: true
     },
     plugins: [

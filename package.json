@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://kaderimon.github.io/Rabbit-Hunter-Redux",
   "scripts": {
-    "dev": "webpack-dev-server",
+    "dev": "webpack-dev-server --open",
     "prod": "npm run clean && set NODE_ENV=production&& webpack -p",
     "clean": "rimraf ./dist/*"
   },
@@ -24,7 +25,8 @@
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
     "recharts": "^1.0.0-alpha.0",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.7",

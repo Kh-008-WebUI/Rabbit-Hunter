@@ -3,77 +3,92 @@ import React, { Component } from 'react';
 export default class HunterForm extends Component {
 	constructor(props){
 		super(props);
-		console.log(this.props);
-		let coordinates = new Set();
 		this.state = {
 			name:"",
 			gender:"Male",
-			coordinates:coordinates
+			accuracy:"0",
+			isFormValid:false
 		};
 		this.onChange = this.onChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleCheckBoxChange = this.handleCheckBoxChange.bind(this);
 	}
 
     onChange(e) {
+    	let name = e.target.name;
+    	let value = e.target.value;
     	let obj = {};
-    	obj[e.target.name] = e.target.value;
-        this.setState(obj);
+    	obj[name] = value;
+        this.setState(obj,()=>this.validateForm(name,value));
+    }
+    validateForm(name,value){
+    	let valid = this.state.isFormValid;
+    	if(name === "name"){
+    		valid = value.match(/^([\D]+)$/i);
+    	}
+    	this.setState({
+			isFormValid:valid
+		});
     }
     handleSubmit(e) {
     	e.preventDefault();
-        this.props.addHunter(this.state.name,this.state.gender);
+        this.props.addHunter(this.state.name,this.state.gender,this.state.accuracy);
         this.setState({
 			name:"",
 			gender:"Male",
+			accuracy:"0",
+			isFormValid:false
 		});
     }
-	handleCheckBoxChange(changeEvent) {
-	  if (this.state.coordinates.has(changeEvent.target.value)) {
-	      this.state.coordinates.delete(changeEvent.target.value);
-	  } else {
-	      this.state.coordinates.add(changeEvent.target.value);
-	  }
+    nameBorder(){
+    	return(this.state.isFormValid ? 'name-green':'name-red');
+    }
+	submitButton(){
+		return(this.state.isFormValid ? 'btn-success':'btn-submit');
 	}
-
 	render() {
 		return (
 			<div className="hunterAdd">
-				<form onSubmit={this.handleSubmit}>
+				<p>Сейчас зайца уже ловят {this.props.hunter.length} охотников</p>
+				<legend>Добавить охотника</legend>
+				<form className="main-form" onSubmit={this.handleSubmit}>
 					<fieldset>
-						<p>Сейчас зайца уже ловят {this.props.hunter.length} охотников</p>
-		                <p>
-		                    <label>Имя:</label><br />
+		                <div>
+		                    <label><p className="margin">Имя:</p>
 		                    <input type="text" 
+		                    	   className={`${this.nameBorder()}`}
+		                    	   placeholder="Введите имя охотника"
 		                           name="name" 
 		                           value={this.state.name} 
-		                           onChange={this.onChange}/>
-		                </p>
-		                <p>
-		                  <input type="radio" 
+		                           onChange={this.onChange}/></label>
+		                </div>
+		                <hr />
+		                <div>
+		                  <p className="margin"><label>Пол:</label></p>
+		                  <label><input type="radio" 
 		                  		 name="gender" 
 		                  		 value="Male" 
 		                  		 checked={this.state.gender === 'Male'} 
-		                  		 onChange={this.onChange} /> Male
+		                  		 onChange={this.onChange} /> Male </label>
 
-	  					  <input type="radio"
+	  					  <label><input type="radio"
 	  					   		 name="gender"
 	  					    	 value="Female"
 	  					    	 checked={this.state.gender === 'Female'}
-	  					         onChange={this.onChange}/> Female
-		                </p>
-		                <p>
-		                  <label>Що почує:</label><br />
-		                  <input type="checkBox" 
-		                  		 name="x" 
-		                  		 value="x" 
-		                  		 onChange={this.handleCheckBoxChange} />X
-	  					  <input type="checkBox" 
-	  					  		 name="y" 
-	  					  		 value="y"
-	  					  		 onChange={this.handleCheckBoxChange}/>Y
-		                </p>
-		                <input type="submit" value="Add hunter"/>
+	  					         onChange={this.onChange}/> Female</label>
+		                </div>
+		                <hr />
+		                <div>
+		                  <label><p className="margin">Меткость стрелка:</p>
+	  					  <input type="range" 
+	  					  		 name="accuracy" 
+	  					  		 value={this.state.accuracy}
+	  					  		 onChange={this.onChange}/>{this.state.accuracy}%</label>
+	  					</div>
+	  					<hr />
+		                <input disabled={!this.state.isFormValid} 
+		                	   className={`btn margin ${this.submitButton()}`}
+		                	   type="submit" 
+		                	   value="Add hunter"/>
 		            </fieldset>
 		        </form>
 	        </div>
@@ -81,5 +96,6 @@ export default class HunterForm extends Component {
 	}
 }
 HunterForm.propTypes = {
+	hunter : React.PropTypes.array,
     addHunter : React.PropTypes.func
 }
