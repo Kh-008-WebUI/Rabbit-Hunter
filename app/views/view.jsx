@@ -11,16 +11,25 @@ export default class View extends React.Component {
             x: this.props.store.getState().location.x,
             y: this.props.store.getState().location.y,
             hunters: this.props.store.getState().hunters,
-            name: ""
+            name: "",
+            nameValid: false
         };
         this.move = this.move.bind(this);
         this.addNewHunter = this.addNewHunter.bind(this);
         this.storeChanged = this.storeChanged.bind(this);
         this.onChange = this.onChange.bind(this);
+        this.nameValidation = this.nameValidation.bind(this);
     }
 
     componentDidMount() {
         this.unsubscribe = this.props.store.subscribe(this.storeChanged);
+    }
+    nameValidation(name) {
+        let letters = /^[A-Za-z]+$/;
+        if ( name.match(letters) && (name.length > 2) ) {
+            return true
+        }
+        return false;
     }
 
     componentWillUnmount() {
@@ -46,11 +55,13 @@ export default class View extends React.Component {
 
     onChange(event) {
         this.setState({
-            name: event.target.value
+            name: event.target.value,
+            nameValid: this.nameValidation(event.target.value)
         });
     }
 
     render() {
+        let nameColor = this.state.nameValid === true ? "green" : "red";
         return (
             <main>
                 {/*field with rabbit*/}
@@ -76,12 +87,17 @@ export default class View extends React.Component {
                     </div>
                 </section>
 
-
                 <section>
                     <form>
                         <label>
                             Hunter's Name
-                        <input type="text" name="nameHunter" value={this.state.name} onChange={this.onChange} />
+                            <input
+                                type="text"
+                                name="nameHunter"
+                                value={this.state.name}
+                                onChange={this.onChange}
+                                style={{borderColor: nameColor}}
+                            />
                         </label>
                     </form>
                     <button onClick={this.addNewHunter}>add hunter</button>

@@ -6,6 +6,7 @@ export default class RealHunter extends React.Component {
     }
     render() {
         let path = { backgroundImage: `url(${this.props.path})` };
+
         return (
 
             <figure className="title-name">
