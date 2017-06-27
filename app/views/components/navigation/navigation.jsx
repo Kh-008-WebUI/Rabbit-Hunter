@@ -1,4 +1,4 @@
-import React from "react";
+c import React from "react";
 import { Link } from 'react-router-dom';
 
 export default class Navigation extends React.Component {
@@ -14,7 +14,7 @@ export default class Navigation extends React.Component {
                     </div>
                     <ul className="nav navbar-nav">
                         <li className="active"><Link to="/">Main</Link></li>
-                        <li><Link to="/form">Add Hunter</Link></li>
+                        <li><Link to="/form">Hunters</Link></li>
                     </ul>
                 </div>
             </nav>
