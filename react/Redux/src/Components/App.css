@@ -1,0 +1,36 @@
+body {
+  background-image:url(./pictures/grass.png);
+}
+
+.coordinates {
+  background-color: lightgreen;
+  z-index: 1;
+}
+
+.rabbit{
+    background-image:url(./pictures/rabit.jpg);
+    background-size: 153px, 122px;
+    width: 153px;
+    height: 122px;
+    position: absolute;
+    top: 50;
+    left: 50;
+    z-index: -1;
+}
+
+img {
+  position: relative;
+}
+
+button {
+  background-color: lightgrey;
+  margin: 10px;
+  display: block;
+  width: 150px;
+  height: 50px;
+  font-weight: bold;
+  font-size: large;
+  outline: none;
+
+}
+
